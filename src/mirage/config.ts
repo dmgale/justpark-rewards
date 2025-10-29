@@ -7,9 +7,11 @@ export function makeServer({ environment = 'development' } = {}) {
 
     routes() {
       this.namespace = 'api';
-
-      // Simulate network latency
-      this.timing = 400;
+      
+      // Only add timing delay in development
+      if (environment === 'development') {
+        this.timing = 400;
+      }
 
       // Register parking routes
       parkingRoutes(this);
@@ -17,15 +19,14 @@ export function makeServer({ environment = 'development' } = {}) {
       // Passthrough for specific external APIs
       this.passthrough('https://api.maptiler.com/**');
       this.passthrough('https://maps.googleapis.com/**');
-
+      
       // Passthrough for any request not starting with /api (e.g., static assets)
-      this.passthrough(function(request) {
+      this.passthrough((request) => {
         return !request.url.startsWith('/api');
       });
     },
   });
 
-  console.log('🎭 Mirage JS server started');
-
+  console.log(`🎭 Mirage JS server started in ${environment} mode`);
   return server;
 }

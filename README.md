@@ -9,6 +9,8 @@ A parking space search application with an innovative tiered loyalty program con
 ## ✨ Demo
 To support review, this has also been deployed via Vercel to: https://justpark-rewards.vercel.app/ 
 
+Note: As this is deployed to a 'production' (i.e. not dev) environmnet for review purposes only, I have updated config for Mirage JS to load synchronously in all environments.
+
 ## ✨ Features
 
 ### Core Requirements (Challenge Completion plus extra)
