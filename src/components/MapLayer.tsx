@@ -5,7 +5,7 @@ import { Map } from 'react-map-gl/maplibre'
 import maplibregl from 'maplibre-gl'
 import Search from './search/Search'
 import { spacesData } from '../mirage/data/geoParkingSpaces'
-import { Store, BatteryCharging, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { lucideToDataURL } from '../util/lucideToDataUrl'
 import type { ParkingSpace } from './types/search.types'
 
@@ -28,7 +28,7 @@ interface SearchResults {
   spaces?: ParkingSpace[];
 }
 
-const MapLayer = forwardRef((props, ref) => {
+const MapLayer = forwardRef((_props, ref) => {
   const [layers, setLayers] = useState<LayersList>([])
   const [showAllSpaces, setShowAllSpaces] = useState(true)
   const [selectedFeature, setSelectedFeature] = useState<any>(null)

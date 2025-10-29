@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComboBox, Input, Group, Popover, ListBox, ListBoxItem } from 'react-aria-components';
 import { Search, MapPin } from 'lucide-react';
 import type { Location } from '../types/search.types';

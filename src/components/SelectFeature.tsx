@@ -14,7 +14,6 @@ interface SelectedFeaturePopupProps {
 
 const SelectedFeaturePopup: React.FC<SelectedFeaturePopupProps> = ({
   feature,
-  icon,
   onClose,
   getStreetViewUrl,
 }) => {

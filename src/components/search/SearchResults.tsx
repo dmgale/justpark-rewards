@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { SlidersHorizontal, Search } from 'lucide-react';
 import { ParkingSpaceCard } from './ParkingSpaceCard';
 import type { SearchResultsProps } from '../types/search.types';

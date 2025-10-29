@@ -1,5 +1,4 @@
-import React from 'react';
-import { User, Mail, Phone, MapPin, Calendar } from 'lucide-react';
+import { User, Mail, Phone, Calendar } from 'lucide-react';
 import { MembershipTiers } from './MembershipTiers';
 
 interface ProfileSectionProps {

@@ -5,7 +5,7 @@ import { convertToGeoJSON } from '../../util/converToGeoJson';
 
 export function parkingRoutes(server: any) {
   // POST /api/parking/search
-  server.post('/parking/search', (schema: any, request: any) => {
+  server.post('/parking/search', (_schema: any, request: any) => {
     const requestBody: ParkingSearchRequest = JSON.parse(request.requestBody);
     const { location, startTime, endTime } = requestBody;
 

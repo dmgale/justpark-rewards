@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Bookmark, User, Menu, X, Mail, Phone, MapPin as LocationPin } from 'lucide-react';
+import { Calendar, Bookmark, User, Menu, X, Mail, Phone } from 'lucide-react';
 import { Button } from 'react-aria-components';
 import { ParkingSpaceCard } from '../search/ParkingSpaceCard';
 import { useParkingContext } from '../../context/ParkingContext';

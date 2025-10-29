@@ -16,7 +16,7 @@ export function ParkingSpaceCard({ space, onClick, hideActions = false, onViewOn
   const [viewHovered, setViewHovered] = React.useState(false);
   const [isReserving, setIsReserving] = React.useState(false);
   
-  const { addReservation, isReserved, addSavedSearch, isSaved } = useParkingContext();
+  const { addReservation, isReserved, isSaved } = useParkingContext();
   const reserved = isReserved(space.id);
   const saved = isSaved(space.id);
 

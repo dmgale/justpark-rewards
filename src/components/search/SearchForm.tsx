@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, ArrowRight, X } from 'lucide-react';
 import { LocationSearch } from './LocationSearch';
 import { DateTimeField } from './DateTimeField';

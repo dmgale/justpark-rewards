@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { ParkingProvider } from './context/ParkingContext';
 import MapLayer from './components/MapLayer';
 import type { ParkingSpace } from './components/types/search.types';
