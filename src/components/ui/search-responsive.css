@@ -1,0 +1,162 @@
+/* Responsive styles for Search components */
+
+/* Fix for scrolling results */
+.search-results-container {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results-list {
+  flex: 1;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Force visible scrollbar - WebKit browsers (Chrome, Safari, Edge) */
+.search-results-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.search-results-list::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.search-results-list::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+.search-results-list::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Force visible scrollbar - Firefox */
+.search-results-list {
+  scrollbar-width: thin;
+  scrollbar-color: #22c55e #f3f4f6;
+}
+
+/* Custom checkbox styling with white checkmark */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  color: #16a34a;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:hover {
+  border-color: #22c55e;
+}
+
+input[type="checkbox"]:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  /* Make location search full width on tablet */
+  .location-search-field {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* DateTime row takes full width */
+  .datetime-row {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  /* Reduce card padding */
+  .search-card {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Stack everything vertically */
+  .search-fields {
+    flex-direction: column !important;
+  }
+
+  /* DateTime fields stack vertically on mobile */
+  .datetime-field {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* Hide arrow on mobile */
+  .datetime-arrow {
+    display: none !important;
+  }
+
+  /* Button container stacks */
+  .button-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  /* Full width button on mobile */
+  .search-button {
+    width: 100% !important;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .search-card {
+    padding: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Reduce gaps */
+  .search-fields,
+  .datetime-row,
+  .button-container {
+    gap: 16px !important;
+  }
+
+  /* Smaller input padding */
+  .react-aria-Input,
+  .react-aria-DateInput {
+    padding: 12px !important;
+    font-size: 16px !important;
+  }
+
+  /* Smaller labels */
+  .react-aria-Label {
+    font-size: 12px !important;
+  }
+}

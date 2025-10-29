@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useRef } from 'react';
+import { ParkingProvider } from './context/ParkingContext';
+import MapLayer from './components/MapLayer';
+import type { ParkingSpace } from './components/types/search.types';
+import RightSidebar from './components/applayout/RightSideBar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isRightSidebarCollapsed, setIsRightSidebarCollapsed] = useState(true); 
+  const mapLayerRef = useRef<any>(null);
+
+  // Handle "View on Map" from sidebar
+  const handleViewOnMap = (space: ParkingSpace) => {
+    console.log('Flying to parking space:', space.name);
+    
+    // Trigger map to fly to this location
+    if (mapLayerRef.current && mapLayerRef.current.flyToLocation) {
+      mapLayerRef.current.flyToLocation(space.lng, space.lat);
+    }
+  
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ParkingProvider>
+      <div className="App">
+        <MapLayer ref={mapLayerRef} />
+        <RightSidebar
+          isRightSidebarCollapsed={isRightSidebarCollapsed}
+          changeIsRightSidebarCollapsed={setIsRightSidebarCollapsed}
+          onViewOnMap={handleViewOnMap}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ParkingProvider>
+  );
 }
 
-export default App
+export default App;

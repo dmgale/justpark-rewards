@@ -1,0 +1,140 @@
+/* React Aria component styles */
+
+.react-aria-SearchField,
+.react-aria-ComboBox,
+.react-aria-DatePicker,
+.react-aria-TimeField {
+  display: flex;
+  flex-direction: column;
+}
+
+.react-aria-Label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #22c55e;
+  margin-bottom: 8px;
+}
+
+.react-aria-Input,
+.react-aria-DateInput,
+.react-aria-TimeField input {
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  width: 93%;
+  background: transparent;
+  color: #1f2937;
+}
+
+.react-aria-Input:focus,
+.react-aria-DateInput:focus-within {
+  outline: none;
+}
+
+.react-aria-Group:focus-within {
+  border-color: #22c55e !important;
+}
+
+.react-aria-Button {
+  padding: 18px 32px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.react-aria-Button:hover {
+  background: #16a34a;
+}
+
+.react-aria-Button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.react-aria-Popover {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.react-aria-ListBox {
+  padding: 8px;
+  outline: none;
+}
+
+.react-aria-ListBoxItem {
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+}
+
+.react-aria-ListBoxItem:hover,
+.react-aria-ListBoxItem[data-focused] {
+  background: #f3f4f6;
+}
+
+.react-aria-ListBoxItem[data-selected] {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.react-aria-DateSegment {
+  padding: 2px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.react-aria-DateSegment:focus {
+  background: #22c55e;
+  color: white;
+}
+
+.react-aria-DateSegment[data-placeholder] {
+  color: #9ca3af;
+}
+
+.react-aria-CalendarCell {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+}
+
+.react-aria-CalendarCell:hover {
+  background: #f3f4f6;
+}
+
+.react-aria-CalendarCell[data-selected] {
+  background:#22c55e;
+  color: white;
+}
+
+.react-aria-CalendarCell[data-disabled] {
+  color: #d1d5db;
+  cursor: default;
+}
+
+.react-aria-CalendarCell[data-disabled]:hover {
+  background: transparent;
+}
+
+.react-aria-CalendarCell[data-outside-month] {
+  color: #9ca3af;
+}
