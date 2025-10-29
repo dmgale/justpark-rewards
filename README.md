@@ -67,7 +67,6 @@ The application will be available at `http://localhost:5173`
 - **UI Components**: React Aria Components (Adobe)
 - **Maps**: DeckGL for geospatial visualization
 - **Mock API**: Mirage JS
-- **Styling**: Tailwind CSS
 
 ---
 
@@ -131,6 +130,7 @@ Response:
 - Screen reader friendly
 - Focus management
 - ARIA labels and semantic HTML
+- Note: Requires additonal mobile responsiveness work
 
 ## ⏱️ Time Investment
 
@@ -141,7 +141,6 @@ This project was completed within the challenge timeframe.
 - ✅ TypeScript setup and type safety
 TypeScript setup and type safety
 - ✅ Cleanup, styling and clear commenting in code
-
 Note: Extra items listed above may have fallen outside of this timeframe but timeboxed. 
 
 ## 📝 Assumptions & Trade-offs
