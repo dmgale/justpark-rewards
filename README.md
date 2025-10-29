@@ -6,6 +6,9 @@ A parking space search application with an innovative tiered loyalty program con
 
 **JustPark Rewards** is a frontend technical challenge submission that reimagines JustPark's parking search experience with a loyalty tiered approach. This application demonstrates a modern, accessible parking search interface with interactive geospatial visualization.
 
+## ✨ Demo
+To support review, this has also been deployed via Vercel to: https://justpark-rewards.vercel.app/ 
+
 ## ✨ Features
 
 ### Core Requirements (Challenge Completion plus extra)
