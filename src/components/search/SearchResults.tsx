@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { SlidersHorizontal, Search } from 'lucide-react';
+import { SlidersHorizontal, Search, Check } from 'lucide-react';
 import { ParkingSpaceCard } from './ParkingSpaceCard';
 import type { SearchResultsProps } from '../types/search.types';
 import { calculateDistance } from '../../util/calcDistance';
@@ -40,7 +40,7 @@ export function SearchResults({ results, onResultClick, searchLocation }: Search
 
   // Toggle feature selection
   const toggleFeature = (feature: string) => {
-    setSelectedFeatures(prev => 
+    setSelectedFeatures(prev =>
       prev.includes(feature)
         ? prev.filter(f => f !== feature)
         : [...prev, feature]
@@ -55,7 +55,7 @@ export function SearchResults({ results, onResultClick, searchLocation }: Search
   // Filter spaces based on selected features
   const filteredSpaces = results.spaces.filter(space => {
     if (selectedFeatures.length === 0) return true;
-    
+
     const spaceFeatures = space.features || [];
     return selectedFeatures.every(feature => spaceFeatures.includes(feature));
   });
@@ -102,10 +102,10 @@ export function SearchResults({ results, onResultClick, searchLocation }: Search
         >
           Closest
         </button>
-        
+
         {/* Filters Button with Dropdown */}
         <div style={styles.filterContainer} ref={filterRef}>
-          <button 
+          <button
             style={{
               ...styles.filterButton,
               ...(selectedFeatures.length > 0 ? styles.filterButtonActive : {})
@@ -130,17 +130,31 @@ export function SearchResults({ results, onResultClick, searchLocation }: Search
                   </button>
                 )}
               </div>
-              
+
               <div style={styles.dropdownContent}>
                 {allFeatures.length > 0 ? (
                   allFeatures.map(feature => (
-                    <label key={feature} style={styles.checkboxLabel}>
-                      <input
-                        type="checkbox"
-                        checked={selectedFeatures.includes(feature)}
-                        onChange={() => toggleFeature(feature)}
-                        style={styles.checkbox}
-                      />
+                    <label
+                      key={feature}
+                      style={styles.checkboxLabel}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#f3f4f6';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                      }}
+                    >
+                      <div
+                        onClick={() => toggleFeature(feature)}
+                        style={{
+                          ...styles.checkbox,
+                          ...(selectedFeatures.includes(feature) ? styles.checkboxChecked : {})
+                        }}
+                      >
+                        {selectedFeatures.includes(feature) && (
+                          <Check size={14} color="#ffffff" strokeWidth={3} />
+                        )}
+                      </div>
                       <span>{feature}</span>
                     </label>
                   ))
@@ -165,9 +179,9 @@ export function SearchResults({ results, onResultClick, searchLocation }: Search
       <div style={styles.resultsList} className="search-results-list">
         {sortedSpaces.length > 0 ? (
           sortedSpaces.map((space) => (
-            <ParkingSpaceCard 
-              key={space.id} 
-              space={space} 
+            <ParkingSpaceCard
+              key={space.id}
+              space={space}
               onClick={() => onResultClick?.(space)}
             />
           ))
@@ -301,13 +315,20 @@ const styles = {
   checkbox: {
     width: '18px',
     height: '18px',
+    minWidth: '18px',
+    minHeight: '18px',
     cursor: 'pointer',
-    appearance: 'none' as const,
     backgroundColor: '#ffffff',
     border: '2px solid #d1d5db',
     borderRadius: '4px',
-    position: 'relative' as const,
     transition: 'all 0.2s',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  checkboxChecked: {
+    backgroundColor: '#22c55e',
+    borderColor: '#22c55e',
   },
   noFeatures: {
     padding: '16px',
