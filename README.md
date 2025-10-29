@@ -228,13 +228,14 @@ Note: Extra items listed above may have fallen outside of this timeframe but tim
 
 ---
 
-## 🎯 JustPark Gold Loyalty Concept
+## 🎯 JustPark Rewards Loyalty Concept
 
 While completing the technical challenge, I noticed JustPark currently lacks a traditional loyalty program.  Whilst benefits can be gained through longer booking blocks, **JustPark Rewards** introduces a tiered loyalty scheme that could:
 - Reward frequent parkers with points on every booking
 - Offer exclusive perks like priority spaces and enhanced support
 - Provide volume discounts and member-only features
 - Increase customer retention and lifetime value
+- Falls inline with EV Rewards programme, or could cross collaborate
 
 This concept positions JustPark Gold as a premium membership tier that differentiates from competitors.  This Task Demonstrates 'instant upgrade' possibilities for loyalty, repeat business and repeat revenue subscription model.
 
@@ -252,6 +253,7 @@ This concept positions JustPark Gold as a premium membership tier that different
 
 - **Entry** - Standard users
   - Pay-as-you-go pricing (as-is)
+
 
 ---
 
@@ -374,4 +376,4 @@ This project is a technical challenge submission for JustPark.
 - DeckGL team for amazing geospatial tools
 - Mirage JS for seamless API mocking
 
-**Thank you for reviewing my submission!** 🚗✨# justpark-rewards
+**Thank you for reviewing my submission!** 🚗 # justpark-rewards
