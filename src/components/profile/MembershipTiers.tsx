@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Check, Crown, Award, User, ChevronDown, ChevronUp } from 'lucide-react';
+import goldLogo from '../../assets/JustPark-Gold.png';
+import silverLogo from '../../assets/JustPark-Silver.png';
+import entryLogo from '../../assets/JustPark-Entry.jpg';
 
 interface TierBenefit {
   text: string;
@@ -30,6 +33,7 @@ const TIERS: Tier[] = [
     yearlyPrice: '£50/year',
     color: '#f59e0b',
     icon: <Crown size={20} />,
+    logoUrl: goldLogo,
     benefits: [
       { text: '10% off all bookings', highlight: true },
       { text: 'Priority customer support' },
@@ -43,6 +47,7 @@ const TIERS: Tier[] = [
     price: 'Free tier',
     color: '#9ca3af',
     icon: <Award size={20} />,
+    logoUrl: silverLogo,
     benefits: [
       { text: '5% off bookings' },
       { text: 'Earn 1x points per booking' },
@@ -55,6 +60,7 @@ const TIERS: Tier[] = [
     price: 'Standard users',
     color: '#6b7280',
     icon: <User size={20} />,
+    logoUrl: entryLogo,
     benefits: [
       { text: 'Pay-as-you-go pricing' },
     ],
@@ -119,7 +125,6 @@ export function MembershipTiers({ currentTier, onUpgrade }: MembershipTiersProps
                 onClick={() => toggleTier(tier.id)}
               >
                 <div style={styles.tierHeaderLeft}>
-                  {/* Logo placeholder - replace with your actual logo */}
                   {tier.logoUrl ? (
                     <img 
                       src={tier.logoUrl} 
