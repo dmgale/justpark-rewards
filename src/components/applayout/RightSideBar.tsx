@@ -3,7 +3,7 @@ import { Calendar, Bookmark, User, Menu, X, Mail, Phone } from 'lucide-react';
 import { Button } from 'react-aria-components';
 import { ParkingSpaceCard } from '../search/ParkingSpaceCard';
 import { useParkingContext } from '../../context/ParkingContext';
-import logo from '../../assets/Justpark-gold-logo.png';
+import logo from '../../assets/justpark-gold-logo.png';
 import type { ParkingSpace } from '../types/search.types';
 import { MembershipTiers } from '../profile/MembershipTiers';
 
