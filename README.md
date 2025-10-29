@@ -253,13 +253,6 @@ This concept positions JustPark Gold as a premium membership tier that different
 - **Entry** - Standard users
   - Pay-as-you-go pricing (as-is)
 
-Could easily upgrade users within app etc:
-
-```  const handleUpgradeTier = (tier: 'gold' | 'silver' | 'entry') => {
-    console.log('Upgrading to:', tier);
-  };
-
-```
 ---
 
 ## 🏗️ Project Structure
